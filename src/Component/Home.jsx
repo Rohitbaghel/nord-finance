@@ -86,9 +86,10 @@ export const Home=() => {
       
   return (
       <div >
+          {/* table and Pagination both come from antDT  */} 
           <Table columns={column} dataSource={data} loading={loading} pagination={false} Key={uuidv4()} />
           <Pagination style={{'marginTop':'5vh'}} onChange={() => setPage(page+1)} total={82} defaultCurrent={1} showSizeChanger={false}/>
-       
+          {/* table and Pagination both come from antDT  */} 
         
       </div>
   )
