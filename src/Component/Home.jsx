@@ -9,6 +9,8 @@ export const Home=() => {
     const [loading, setLoading]=useState(false)
     const [page, setPage]=useState(1);
    
+
+    // column array for creating column of our table
     const column=[
         {
             key: '1',
@@ -67,11 +69,17 @@ export const Home=() => {
        
         
     ]
+     // column array for creating column of our table
+    
+    
+    // function to fetch the data
     const GetPeople= () => {
       setLoading(true)
         fetch(`https://swapi.dev/api/people/?page=${page}`).then(res => res.json()).then(result => setData(result.results)).catch((err) => {console.log(err)}).finally(() => {setLoading(false)}) 
     }
+    // function to fetch the data
 
+    // useEffect hook with dependency page to handle rerendering when click on page
     useEffect(() => {
    GetPeople()     
     }, [page])
