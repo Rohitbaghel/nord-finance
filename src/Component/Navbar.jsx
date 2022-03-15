@@ -8,6 +8,7 @@ export const Navbar = () => {
   const [text, setText] =useState('')
   const [loading, setLoading]=useState(false)
 
+  // Fetch data function for getting data
   const GetData=(event) => {
     setLoading(true)
     fetch(`https://swapi.dev/api/people/?search=${text}`).then(res => res.json()).then((json) => {
@@ -16,7 +17,7 @@ export const Navbar = () => {
     }).catch(err => {console.log(err)}).finally(setLoading(false))
   }
 
- 
+//  debaouncing to avoid unnecessary api calls
   const HandleText=debounce((word) => {
   setText(word)
   },300)
@@ -28,7 +29,7 @@ export const Navbar = () => {
   
   return (
       <>
-    
+    {/* container div */}
         <div style={{backgroundImage: `url(${backgroundUrl})`,}} className='Container' >
 
 
@@ -63,7 +64,7 @@ export const Navbar = () => {
 
       </div>
     
-
+{/* search input div */}
       <div  className='SearchResultDiv' >
       {data.map((e) => (
         <div>{text==='' ? data.length ===0: e.name}</div>
