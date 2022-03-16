@@ -20,6 +20,7 @@ export const Home=() => {
             dataIndex: 'name',
             sorter: (a, b) => a.name.length - b.name.length,
             sortDirections: ['descend'],
+            // table searching functionality from antdt
             filterDropdown: ({setSelectedKeys,selectedKeys,confirm,clearFilters}) => {
                 return<>
                <input autoFocus 
@@ -45,7 +46,7 @@ export const Home=() => {
             onFilter: (value,record) => {
             return record.name.toLowerCase().includes(value.toLowerCase())
             },
-          
+            // table searching functionality from antdt
           width:'25%',
         },
         {
