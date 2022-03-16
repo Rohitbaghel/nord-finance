@@ -116,7 +116,7 @@ export const Home=() => {
    GetPeople()     
     }, [page])
       
-  return error ? (<div><img src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse1.mm.bing.net%2Fth%3Fid%3DOIP.AGJ48lEJUgIThMessuE5YwHaHa%26pid%3DApi%26h%3D160&f=1" alt="warning404" /></div>): (
+  return error ? (<div><img src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse1.mm.bing.net%2Fth%3Fid%3DOIP.AGJ48lEJUgIThMessuE5YwHaHa%26pid%3DApi%26h%3D160&f=1" alt="warning404" style={{marginTop:'20vh'}}/></div>): (
       <>
           {/* table and Pagination both come from antDT  */} 
           <Table columns={column} dataSource={data} loading={loading} pagination={false} rowKey={record => record.name}/>
