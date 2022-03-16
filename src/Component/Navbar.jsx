@@ -13,7 +13,6 @@ export const Navbar = () => {
     setLoading(true)
     fetch(`https://swapi.dev/api/people/?search=${text}`).then(res => res.json()).then((json) => {
       setData(json.results);
-      console.log(data)
     }).catch(err => {console.log(err)}).finally(setLoading(false))
   }
 
@@ -66,8 +65,8 @@ export const Navbar = () => {
     
 {/* search input div */}
       <div  className='SearchResultDiv' >
-      {data.map((e) => (
-        <div>{text==='' ? data.length ===0: e.name}</div>
+      {data.map((e,i) => (
+        <div key={i}>{text==='' ? data.length ===0: e.name}</div>
       ))}
      
       </div>
